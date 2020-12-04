@@ -1,0 +1,19 @@
+html {
+  background: $color-background;
+}
+
+.Sidebar {
+  $width: 8rem;
+
+  width: $width;
+  height: 100vh;
+  background: $color-main-1;
+  position: absolute;
+
+  &.isVisible {
+    left: 0;
+  }
+  &.isHidden {
+    left: -$width;
+  }
+}
