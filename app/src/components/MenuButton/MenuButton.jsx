@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 
 export const MenuButton = props => {
 
-  const { icon, ariaLabel, isOn, setIsOn } = props;
+  const { isMain } = props;
+  const { icon, ariaLabel } = props.menuButton;
+  const [isOn, setIsOn] = props.toggleLogic;
 
   const handleClick = e => {
     setIsOn(!isOn);
@@ -10,11 +12,11 @@ export const MenuButton = props => {
 
   return (
     <button
-      className='MenuButton'
+      className={isMain ? 'MenuButton MenuButton--main' : 'MenuButton'}
       aria-label={isOn ? ariaLabel.on : ariaLabel.off}
       onClick={handleClick}
     >
-      {icon}
+      {isOn ? icon.on : icon.off}
     </button>
   );
 };
