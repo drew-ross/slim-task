@@ -14,6 +14,7 @@ export const Sidebar = props => {
       <div className={visible ? 'Sidebar Sidebar--isVisible' : 'Sidebar Sidebar--isHidden'}>
         <div className='empty-button-space' />
         <MenuButton menuButton={menuButtonData.taskList} toggleLogic={[testToggle, setTestToggle]} />
+        <MenuButton menuButton={menuButtonData.timer} toggleLogic={[testToggle, setTestToggle]} />
       </div>
     </>
   );
