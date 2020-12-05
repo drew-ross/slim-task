@@ -1,28 +1,19 @@
 import React, { useState } from 'react';
 import MenuButton from '../MenuButton';
 
-const menuButtons = {
-  hamburger: {
-    icon: {
-      on: 'X',
-      off: '☰'
-    },
-    ariaLabel: {
-      on: 'Close Menu',
-      off: 'Open Menu'
-    }
-  }
-};
+import menuButtonData from './menuButtonData';
 
 export const Sidebar = props => {
 
   const [visible, setVisible] = useState(false);
+  const [testToggle, setTestToggle] = useState(false);
 
   return (
     <>
-      <MenuButton menuButton={menuButtons.hamburger} toggleLogic={[visible, setVisible]} isMain={true} />
-      <div className={visible ? 'Sidebar isVisible' : 'Sidebar isHidden'}>
-
+      <MenuButton menuButton={menuButtonData.hamburger} toggleLogic={[visible, setVisible]} isMain={true} />
+      <div className={visible ? 'Sidebar Sidebar--isVisible' : 'Sidebar Sidebar--isHidden'}>
+        <div className='empty-button-space' />
+        <MenuButton menuButton={menuButtonData.taskList} toggleLogic={[testToggle, setTestToggle]} />
       </div>
     </>
   );
