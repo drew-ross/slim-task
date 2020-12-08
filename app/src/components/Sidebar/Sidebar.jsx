@@ -3,18 +3,23 @@ import MenuButton from '../MenuButton';
 
 import menuButtonData from './menuButtonData';
 
-export const Sidebar = props => {
+export const Sidebar = ({ widgetsAreOn }) => {
 
   const [visible, setVisible] = useState(false);
-  const [testToggle, setTestToggle] = useState(false);
 
   return (
     <>
-      <MenuButton menuButton={menuButtonData.hamburger} toggleLogic={[visible, setVisible]} isMain={true} widgetName='hamburger'/>
+      <MenuButton
+        menuButton={menuButtonData.hamburger}
+        isOn={widgetsAreOn.hamburger}
+        isMain={true}
+        widgetName='hamburger'
+        setSidebarVisible={setVisible}
+      />
       <div className={visible ? 'Sidebar Sidebar--isVisible' : 'Sidebar Sidebar--isHidden'}>
         <div className='empty-button-space' />
-        <MenuButton menuButton={menuButtonData.taskList} toggleLogic={[testToggle, setTestToggle]} widgetName='taskList'/>
-        <MenuButton menuButton={menuButtonData.timer} toggleLogic={[testToggle, setTestToggle]} widgetName='timer'/>
+        <MenuButton menuButton={menuButtonData.taskList} isOn={widgetsAreOn.taskList} widgetName='taskList' />
+        <MenuButton menuButton={menuButtonData.timer} isOn={widgetsAreOn.timer} widgetName='timer' />
       </div>
     </>
   );
