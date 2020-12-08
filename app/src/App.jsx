@@ -10,6 +10,7 @@ const App = props => {
 
   return (
     <div className='App'>
+      <Header />
       <Sidebar />
       <WidgetContainer component={TaskList} isOn={widgetsAreOn.taskList} />
     </div>
