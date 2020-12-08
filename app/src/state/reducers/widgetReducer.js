@@ -19,7 +19,7 @@ export const widgetReducer = (state = initialState, action) => {
 			return { 
 				...state, 
 				[action.payload.widgetName]: {
-          ...[action.payload.widgetName],
+          ...state[action.payload.widgetName],
           isOn: action.payload.isOn
         }
 			};
