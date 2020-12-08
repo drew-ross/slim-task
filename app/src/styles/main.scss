@@ -15,21 +15,37 @@ html {
 
   &.MenuButton--main {
     position: absolute;
+    top: 0;
   }
 }
 
 .Sidebar {
-  $width: 8rem;
-
-  width: $width;
+  width: $sidebar-width;
   height: 100vh;
   background: $color-main-1;
   position: absolute;
+  top: 0;
 
   &.Sidebar--isVisible {
     left: 0;
   }
   &.Sidebar--isHidden {
-    left: -$width;
+    left: -$sidebar-width;
   }
+}
+
+.WidgetContainer {
+  width: 80%;
+  min-height: 10rem;
+  margin: 4rem auto;
+  background: $color-widget-background;
+  color: $color-widget-font;
+  border-radius: $border-radius;
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.Widget {
+  padding: 2rem;
 }

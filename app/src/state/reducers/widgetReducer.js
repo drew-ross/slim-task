@@ -1,26 +1,21 @@
 import { TOGGLE_WIDGET } from '../actions/widgetActions';
 
 const initialState = {
-  hamburger: {
-    isOn: false,
-  },
-  taskList: {
-    isOn: false,
-  },
-  timer: {
-    isOn: false
+  isOn: {
+    hamburger: false,
+    taskList: false,
+    timer: false,
   }
 };
 
 export const widgetReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case TOGGLE_WIDGET:
-      console.log(state[action.payload.widgetName])
 			return { 
 				...state, 
-				[action.payload.widgetName]: {
-          ...[action.payload.widgetName],
-          isOn: action.payload.isOn
+				isOn: {
+          ...state.isOn,
+          [action.payload.widgetName]: action.payload.isOn
         }
 			};
 		default:
