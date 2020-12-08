@@ -1,0 +1,35 @@
+html {
+  background: $color-background;
+}
+
+.empty-button-space {
+  margin: 8rem;
+}
+
+// Components
+.MenuButton {
+  width: 4rem;
+  height: 4rem;
+  margin: 4rem 2rem 0;
+  z-index: 1;
+
+  &.MenuButton--main {
+    position: absolute;
+  }
+}
+
+.Sidebar {
+  $width: 8rem;
+
+  width: $width;
+  height: 100vh;
+  background: $color-main-1;
+  position: absolute;
+
+  &.Sidebar--isVisible {
+    left: 0;
+  }
+  &.Sidebar--isHidden {
+    left: -$width;
+  }
+}
