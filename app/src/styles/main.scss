@@ -6,6 +6,13 @@ html {
   margin: 8rem;
 }
 
+header {
+  color: $color-main-1;
+  position: absolute;
+  top: 4rem;
+  left: 10rem;
+}
+
 // Components
 .MenuButton {
   width: 4rem;
