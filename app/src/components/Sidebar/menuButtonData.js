@@ -1,8 +1,10 @@
+import icons from './../../svg';
+
 const menuButtonData = {
   hamburger: {
     icon: {
-      on: 'X',
-      off: '☰'
+      on: icons.close,
+      off: icons.hamburger
     },
     ariaLabel: {
       on: 'Close Menu',
@@ -11,8 +13,8 @@ const menuButtonData = {
   },
   taskList: {
     icon: {
-      on: 'Tasks',
-      off: 'Tasks'
+      on: icons.checkSolid,
+      off: icons.check
     },
     ariaLabel: {
       on: 'Close Tasks',
@@ -21,8 +23,8 @@ const menuButtonData = {
   },
   timer: {
     icon: {
-      on: 'Timer',
-      off: 'Timer'
+      on: icons.timerSolid,
+      off: icons.timer
     },
     ariaLabel: {
       on: 'Close Timer',

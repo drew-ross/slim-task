@@ -3,7 +3,7 @@ html {
 }
 
 .empty-button-space {
-  margin: 8rem;
+  margin: 12rem;
 }
 
 header {
@@ -15,11 +15,17 @@ header {
 
 // Components
 .MenuButton {
-  width: 4rem;
-  height: 4rem;
-  margin: 4rem 2rem 0;
+  width: 4.6rem;
+  height: 4.6rem;
+  margin: 4rem 1.7rem 0;
   z-index: 1;
+  padding: 0;
+  background: none;
+  border: none;
 
+  &:hover {
+    cursor: pointer;
+  }
   &.MenuButton--main {
     position: absolute;
     top: 0;

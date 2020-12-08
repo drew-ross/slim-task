@@ -11,7 +11,7 @@ const App = props => {
   return (
     <div className='App'>
       <Header />
-      <Sidebar />
+      <Sidebar widgetsAreOn={widgetsAreOn}/>
       <WidgetContainer component={TaskList} isOn={widgetsAreOn.taskList} />
     </div>
   );
