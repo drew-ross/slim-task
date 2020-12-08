@@ -1,8 +1,13 @@
 // Fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$font-main: "Roboto";
 
 // Colors
 $color-background: rgb(31, 31, 31);
 $color-main-1: rgb(36, 154, 209);
+$color-widget-font: rgb(31, 31, 31);
+$color-widget-background: rgb(240, 240, 240);
 
 // Dimensions
 $border-radius: 0.25rem;
