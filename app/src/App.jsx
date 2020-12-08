@@ -10,9 +10,11 @@ const App = props => {
 
   return (
     <div className='App'>
-      <Header />
-      <Sidebar widgetsAreOn={widgetsAreOn}/>
-      <WidgetContainer component={TaskList} isOn={widgetsAreOn.taskList} />
+      <Sidebar widgetsAreOn={widgetsAreOn} />
+      <div className='main'>
+        <Header />
+        <WidgetContainer component={TaskList} isOn={widgetsAreOn.taskList} />
+      </div>
     </div>
   );
 };
