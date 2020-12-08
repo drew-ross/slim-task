@@ -2,11 +2,14 @@ import React, { useEffect } from 'react';
 
 export const MenuButton = props => {
 
-  const { isMain } = props;
+  const { isMain, widgetName, toggleWidget } = props;
   const { icon, ariaLabel } = props.menuButton;
   const [isOn, setIsOn] = props.toggleLogic;
 
   const handleClick = e => {
+    if (widgetName && toggleWidget) {
+      toggleWidget({ widgetName, isOn: !isOn });
+    }
     setIsOn(!isOn);
   };
 

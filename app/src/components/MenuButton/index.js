@@ -1,3 +1,6 @@
 import { MenuButton } from './MenuButton';
+import { connect } from 'react-redux';
 
-export default MenuButton;
+import { toggleWidget } from '../../state/actions/widgetActions';
+
+export default connect(null, { toggleWidget })(MenuButton);
