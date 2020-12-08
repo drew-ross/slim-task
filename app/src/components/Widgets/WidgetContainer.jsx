@@ -9,9 +9,9 @@ export const WidgetContainer = ({ component, isOn }) => {
     <>
       {
         isOn &&
-        <section className='WidgetContainer'>
+        <div className='WidgetContainer'>
           <Widget />
-        </section>
+        </div>
       }
     </>
   );
