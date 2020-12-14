@@ -85,3 +85,11 @@ header {
 .Widget {
   padding: 2rem;
 }
+
+.Task {
+  @include flex(row, flex-start, center);
+  padding: 1rem;
+  background: lightblue;
+  margin: 1rem 0;
+  border-radius: $border-radius;
+}
