@@ -1,8 +1,15 @@
 import React from 'react';
 
-export const Task = ({ task }) => {
+export const Task = ({ task, updateTask, removeTask }) => {
 
   const { complete, taskName } = task;
+
+  const handleCheck = () => {
+    updateTask({
+      ...task,
+      complete: !complete
+    });
+  };
 
   return (
     <div
@@ -12,6 +19,7 @@ export const Task = ({ task }) => {
       <input
         type='checkbox'
         checked={complete}
+        onChange={handleCheck}
       />
       <p>{taskName}</p>
     </div>
