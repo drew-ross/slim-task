@@ -1,27 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import { Task } from './Task';
 
-const dummyTasks = [
-  {
-    id: 1,
-    taskName: 'Dummy Task',
-    complete: true,
-  },
-  {
-    id: 2,
-    taskName: 'Another Dummy Task',
-    complete: false,
-  }
-];
-
-export const TaskList = props => {
+const TaskList = props => {
+  const { taskList } = props;
 
   return (
     <section className='Widget TaskList'>
       <h2>Tasks</h2>
-      {dummyTasks.length &&
-        dummyTasks.map(task => <Task key={task.id} task={task} />)
+      {taskList.length &&
+        taskList.map(task => <Task key={task.id} task={task} />)
       }
     </section>
   );
 };
+
+const mapStateToProps = state => {
+  return {
+    taskList: state.taskListReducer
+  };
+};
+
+const connectedTaskList = connect(mapStateToProps, {})(TaskList);
+
+export { connectedTaskList as TaskList };
