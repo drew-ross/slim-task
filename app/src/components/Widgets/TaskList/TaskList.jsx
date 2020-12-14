@@ -20,14 +20,7 @@ export const TaskList = props => {
     <section className='Widget TaskList'>
       <h2>Tasks</h2>
       {dummyTasks.length &&
-        dummyTasks.map(task => (
-          <Task
-            key={task.id}
-            id={task.id}
-            taskName={task.taskName}
-            complete={task.complete}
-          />
-        ))
+        dummyTasks.map(task => <Task key={task.id} task={task} />)
       }
     </section>
   );
