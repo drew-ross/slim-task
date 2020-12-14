@@ -11,7 +11,7 @@ const TaskList = props => {
   return (
     <section className='Widget TaskList'>
       <h2>Tasks</h2>
-      {taskList.length &&
+      {taskList &&
         taskList.map(task => (
           <Task
             key={task.id}
