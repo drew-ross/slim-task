@@ -2,13 +2,17 @@ import React from 'react';
 
 export const Task = ({ task, updateTask, removeTask }) => {
 
-  const { complete, taskName } = task;
+  const { complete, taskName, uuid } = task;
 
   const handleCheck = () => {
     updateTask({
       ...task,
       complete: !complete
     });
+  };
+
+  const handleDelete = () => {
+    removeTask(uuid);
   };
 
   return (
@@ -22,6 +26,7 @@ export const Task = ({ task, updateTask, removeTask }) => {
         onChange={handleCheck}
       />
       <p>{taskName}</p>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 };
