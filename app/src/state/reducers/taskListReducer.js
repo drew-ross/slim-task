@@ -13,7 +13,7 @@ const initialState = [
   }
 ];
 
-export const widgetReducer = (state = initialState, action) => {
+export const taskListReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
       return [
