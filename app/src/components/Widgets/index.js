@@ -1,5 +1,5 @@
 import { WidgetContainer } from './WidgetContainer';
-import { TaskList } from './TaskList';
+import { TaskList } from './TaskList/TaskList';
 
 export {
   TaskList,
