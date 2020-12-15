@@ -41,7 +41,7 @@ const TaskList = props => {
       {taskList &&
         taskList.map(task => (
           <Task
-            key={task.id}
+            key={task.uuid}
             task={task}
             updateTask={updateTask}
             removeTask={removeTask}
