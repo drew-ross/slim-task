@@ -17,3 +17,19 @@ p {
   font-size: 2rem;
   font-weight: 400;
 }
+
+.empty-button-space {
+  margin: 12rem 0;
+}
+
+.label--hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+}
