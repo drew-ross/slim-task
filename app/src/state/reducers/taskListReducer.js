@@ -1,4 +1,5 @@
 import { ADD_TASK, UPDATE_TASK, REMOVE_TASK } from '../actions/taskListActions';
+import { v4 as uuid } from 'uuid';
 
 const initialState = [
   {
@@ -13,12 +14,24 @@ const initialState = [
   }
 ];
 
+const createNewTask = (taskName) => {
+  const newId = uuid();
+
+  return {
+    uuid: newId,
+    taskName,
+    complete: false
+  };
+};
+
 export const taskListReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
+      const newTask = createNewTask(action.payload);
+      console.log(newTask)
       return [
         ...state,
-        action.payload
+        newTask
       ];
     case UPDATE_TASK:
       return state.map(task => {
