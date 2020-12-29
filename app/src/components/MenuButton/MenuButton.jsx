@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { toggleWidget } from '../../state/actions/widgetActions';
 import { ButtonHoverMessage } from './ButtonHoverMessage';
 
 export const MenuButton = props => {
@@ -12,11 +14,12 @@ export const MenuButton = props => {
     }
   };
 
+  // toggle sidebar when the main menu button is toggled
   useEffect(() => {
     if (isMain && setSidebarVisible) {
       setSidebarVisible(isOn);
     }
-  }, [isOn]);
+  }, [isOn, isMain, setSidebarVisible]);
 
   return (
     <div className={isMain ? 'MenuButton MenuButton--main' : 'MenuButton'}>
@@ -38,3 +41,7 @@ export const MenuButton = props => {
     </div>
   );
 };
+
+const ConnectedMenuButton = connect(null, { toggleWidget })(MenuButton);
+
+export { ConnectedMenuButton };
