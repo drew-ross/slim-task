@@ -1,18 +1,7 @@
-import { ADD_TASK, UPDATE_TASK, REMOVE_TASK } from '../actions/taskListActions';
+import { ADD_TASK, UPDATE_TASK, REMOVE_TASK, SET_TASKS } from '../actions/taskListActions';
 import { v4 as uuid } from 'uuid';
 
-const initialState = [
-  {
-    uuid: 1,
-    taskName: 'Dummy Task',
-    complete: true,
-  },
-  {
-    uuid: 2,
-    taskName: 'Another Dummy Task',
-    complete: false,
-  }
-];
+const initialState = [];
 
 const createNewTask = (taskName) => {
   const newId = uuid();
@@ -26,9 +15,12 @@ const createNewTask = (taskName) => {
 
 export const taskListReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SET_TASKS:
+      const taskList = action.payload;
+      return taskList;
     case ADD_TASK:
       const newTask = createNewTask(action.payload);
-      console.log(newTask)
+      console.log(newTask);
       return [
         ...state,
         newTask
