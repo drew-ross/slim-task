@@ -4,10 +4,19 @@ html {
 
 header {
   color: $color-main-1;
+  margin-left: 6rem;
 }
 
 .main {
-  margin: 4rem 4rem 4rem 12rem;
+  margin: 4rem;
+
+  &.menu-on {
+    margin-left: 12rem;
+
+    header {
+      margin-left: 0;
+    }
+  }
 }
 
 // Components

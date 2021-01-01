@@ -15,7 +15,7 @@ const App = props => {
       <Loader />
       <AutoSaver />
       <Sidebar widgetsAreOn={widgetsAreOn} />
-      <div className='main'>
+      <div className={`main${widgetsAreOn.hamburger ? ' menu-on' : ''}`}>
         <Header />
         <WidgetContainer component={TaskList} isOn={widgetsAreOn.taskList} />
       </div>
