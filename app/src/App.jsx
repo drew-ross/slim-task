@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Loader from './components/Loader';
+import AutoSaver from './components/AutoSaver';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import AutoSaver from './components/AutoSaver';
 import WidgetContainer, { TaskList } from './components/Widgets';
 
 const App = props => {
@@ -11,9 +12,10 @@ const App = props => {
 
   return (
     <div className='App'>
+      <Loader />
       <AutoSaver />
       <Sidebar widgetsAreOn={widgetsAreOn} />
-      <div className='main'>
+      <div className={`main${widgetsAreOn.hamburger ? ' menu-on' : ''}`}>
         <Header />
         <WidgetContainer component={TaskList} isOn={widgetsAreOn.taskList} />
       </div>
