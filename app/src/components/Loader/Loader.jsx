@@ -7,7 +7,9 @@ const Loader = props => {
 
   useEffect(() => {
     const taskListState = JSON.parse(localStorage.getItem('taskListState'));
-    setTaskListState(taskListState);
+    if (taskListState !== null) {
+      setTaskListState(taskListState);
+    }
 
     // eslint-disable-next-line
   }, []);
