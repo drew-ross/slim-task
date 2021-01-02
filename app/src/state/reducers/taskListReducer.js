@@ -1,13 +1,13 @@
-import { ADD_TASK, UPDATE_TASK, REMOVE_TASK, SET_TASKLIST_STATE} from '../actions/taskListActions';
+import { ADD_TASK, UPDATE_TASK, REMOVE_TASK, SET_TASKLIST_STATE } from '../actions/taskListActions';
 import { v4 as uuid } from 'uuid';
 
 const initialState = {
+  showCompleted: false,
   taskList: []
 };
 
 const createNewTask = (taskName) => {
   const newId = uuid();
-
   return {
     uuid: newId,
     taskName,
@@ -20,9 +20,9 @@ export const taskListReducer = (state = initialState, action) => {
     case SET_TASKLIST_STATE:
       const taskListState = action.payload;
       return taskListState;
+
     case ADD_TASK:
       const newTask = createNewTask(action.payload);
-      console.log(newTask);
       return {
         ...state,
         taskList: [
@@ -30,6 +30,7 @@ export const taskListReducer = (state = initialState, action) => {
           newTask
         ]
       };
+
     case UPDATE_TASK:
       return {
         ...state,
