@@ -21,10 +21,14 @@ export const taskListReducer = (state = initialState, action) => {
     case ADD_TASK:
       const newTask = createNewTask(action.payload);
       console.log(newTask);
-      return [
-        ...state,
-        newTask
-      ];
+      if (state.length > 0) {
+        return [
+          ...state,
+          newTask
+        ];
+      } else {
+        return [newTask];
+      }
     case UPDATE_TASK:
       return state.map(task => {
         if (task.uuid === action.payload.uuid) {
