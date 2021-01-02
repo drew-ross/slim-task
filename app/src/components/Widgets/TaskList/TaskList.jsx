@@ -38,16 +38,32 @@ const TaskList = props => {
         />
         <button>Add</button>
       </form>
-      {taskList &&
-        taskList.map(task => (
-          <Task
-            key={task.uuid}
-            task={task}
-            updateTask={updateTask}
-            removeTask={removeTask}
-          />
-        ))
-      }
+      {taskList && (
+        <>
+          <div className="open-tasks">
+            {taskList
+              .filter(task => !task.complete)
+              .map(task => (
+                <Task
+                  key={task.uuid}
+                  task={task}
+                  updateTask={updateTask}
+                  removeTask={removeTask}
+                />))}
+          </div>
+          <div className="closed-tasks">
+            {taskList
+              .filter(task => task.complete)
+              .map(task => (
+                <Task
+                  key={task.uuid}
+                  task={task}
+                  updateTask={updateTask}
+                  removeTask={removeTask}
+                />))}
+          </div>
+        </>
+      )}
     </section>
   );
 };
