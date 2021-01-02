@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
 const AutoSaver = props => {
-  const { taskList, widgets } = props;
+  const { taskListState, widgets } = props;
   const [firstLoad, setFirstLoad] = useState(true);
 
   // Widgets toggled state saver
@@ -20,10 +20,10 @@ const AutoSaver = props => {
     if (firstLoad) {
       setFirstLoad(false);
     } else {
-      saveChanges("taskList", taskList);
+      saveChanges("taskListState", taskListState);
     }
     // eslint-disable-next-line
-  }, [taskList]);
+  }, [taskListState]);
 
   const saveChanges = (name, state) => {
     localStorage.setItem(name, JSON.stringify(state));
@@ -35,7 +35,7 @@ const AutoSaver = props => {
 const mapStateToProps = state => {
   return {
     widgets: state.widgetReducer,
-    taskList: state.taskListReducer
+    taskListState: state.taskListReducer
   };
 };
 

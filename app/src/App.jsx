@@ -12,8 +12,8 @@ const App = props => {
 
   return (
     <div className='App'>
-      <Loader />
       <AutoSaver />
+      <Loader />
       <Sidebar widgetsAreOn={widgetsAreOn} />
       <div className={`main${widgetsAreOn.hamburger ? ' menu-on' : ''}`}>
         <Header />

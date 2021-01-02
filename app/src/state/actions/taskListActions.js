@@ -1,10 +1,11 @@
 export const ADD_TASK = 'ADD_TASK';
 export const UPDATE_TASK = 'UPDATE_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
-export const SET_TASKS = 'SET_TASKS';
+export const SET_TASKLIST_STATE = 'SET_TASKLIST_STATE';
+export const TOGGLE_SHOW_COMPLETED = 'TOGGLE_SHOW_COMPLETED';
 
-export const setTasks = (taskList) => {
-  return { type: SET_TASKS, payload: taskList };
+export const setTaskListState = (taskListState) => {
+  return { type: SET_TASKLIST_STATE, payload: taskListState };
 };
 
 export const addTask = (taskName) => {
@@ -17,4 +18,8 @@ export const updateTask = (task) => {
 
 export const removeTask = (uuid) => {
   return { type: REMOVE_TASK, payload: uuid };
+};
+
+export const toggleShowCompleted = () => {
+  return { type: TOGGLE_SHOW_COMPLETED };
 };
