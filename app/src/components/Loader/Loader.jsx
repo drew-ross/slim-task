@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { setTasks } from '../../state/actions/taskListActions';
+import { setTaskListState } from '../../state/actions/taskListActions';
 
 const Loader = props => {
-  const { setTasks } = props;
+  const { setTaskListState } = props;
 
   useEffect(() => {
-    const taskList = JSON.parse(localStorage.getItem('taskList'));
-    setTasks(taskList);
+    const taskListState = JSON.parse(localStorage.getItem('taskListState'));
+    setTaskListState(taskListState);
 
     // eslint-disable-next-line
   }, []);
@@ -15,4 +15,4 @@ const Loader = props => {
   return null;
 };
 
-export const connectedLoader = connect(null, { setTasks })(Loader);
+export const connectedLoader = connect(null, { setTaskListState })(Loader);

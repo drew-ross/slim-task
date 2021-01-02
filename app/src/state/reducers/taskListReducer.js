@@ -1,7 +1,9 @@
-import { ADD_TASK, UPDATE_TASK, REMOVE_TASK, SET_TASKS } from '../actions/taskListActions';
+import { ADD_TASK, UPDATE_TASK, REMOVE_TASK, SET_TASKLIST_STATE} from '../actions/taskListActions';
 import { v4 as uuid } from 'uuid';
 
-const initialState = [];
+const initialState = {
+  taskList: []
+};
 
 const createNewTask = (taskName) => {
   const newId = uuid();
@@ -15,31 +17,36 @@ const createNewTask = (taskName) => {
 
 export const taskListReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_TASKS:
-      const taskList = action.payload;
-      return taskList;
+    case SET_TASKLIST_STATE:
+      const taskListState = action.payload;
+      return taskListState;
     case ADD_TASK:
       const newTask = createNewTask(action.payload);
       console.log(newTask);
-      if (state.length > 0) {
-        return [
-          ...state,
+      return {
+        ...state,
+        taskList: [
+          ...state.taskList,
           newTask
-        ];
-      } else {
-        return [newTask];
-      }
+        ]
+      };
     case UPDATE_TASK:
-      return state.map(task => {
-        if (task.uuid === action.payload.uuid) {
-          return action.payload;
-        } else {
-          return task;
-        }
-      });
+      return {
+        ...state,
+        taskList: state.taskList.map(task => {
+          if (task.uuid === action.payload.uuid) {
+            return action.payload;
+          } else {
+            return task;
+          }
+        })
+      };
 
     case REMOVE_TASK:
-      return state.filter(task => task.uuid !== action.payload);
+      return {
+        ...state,
+        taskList: state.taskList.filter(task => task.uuid !== action.payload)
+      };
 
     default:
       return state;

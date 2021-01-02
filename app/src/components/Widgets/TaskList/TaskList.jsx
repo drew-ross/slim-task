@@ -70,7 +70,7 @@ const TaskList = props => {
 
 const mapStateToProps = state => {
   return {
-    taskList: state.taskListReducer
+    taskList: state.taskListReducer.taskList
   };
 };
 
