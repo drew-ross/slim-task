@@ -19,6 +19,7 @@ export const widgetReducer = (state = initialState, action) => {
 					[widgetName]: !state.isOn[widgetName]
 				}
 			};
+			
 		default:
 			return state;
 	};
