@@ -13,7 +13,7 @@ const App = props => {
   return (
     <div className='App'>
       <AutoSaver />
-      {/* <Loader /> */}
+      <Loader />
       <Sidebar widgetsAreOn={widgetsAreOn} />
       <div className={`main${widgetsAreOn.hamburger ? ' menu-on' : ''}`}>
         <Header />
