@@ -1,2 +1,2 @@
-# slim-task
-A planner with some extra productivity features.
+# Slim Task
+A modular planner with some extra productivity features.

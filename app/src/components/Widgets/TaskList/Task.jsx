@@ -3,7 +3,7 @@ import React from 'react';
 export const Task = ({ task, updateTask, removeTask }) => {
 
   const { complete, taskName, uuid } = task;
-
+  const className = `Task${complete ? ' Task--completed' : ''}`
   const handleCheck = () => {
     updateTask({
       ...task,
@@ -17,7 +17,7 @@ export const Task = ({ task, updateTask, removeTask }) => {
 
   return (
     <div
-      className='Task'
+      className={className}
       aria-label='Task'
     >
       <input

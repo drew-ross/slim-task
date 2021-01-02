@@ -76,7 +76,7 @@ header {
 }
 
 .WidgetContainer {
-  width: 100%;
+  max-width: 80rem;
   min-height: 10rem;
   margin: 4rem 0;
   background: $color-widget-background;
@@ -93,9 +93,20 @@ header {
 }
 
 .Task {
-  @include flex(row, flex-start, center);
+  display: grid;
+  grid-template-columns: 4rem auto 4rem;
+  align-items: center;
   padding: 1rem;
   background: lightblue;
   margin: 1rem 0;
   border-radius: $border-radius;
+
+  input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &.Task--completed {
+    background: darkgray;
+  }
 }
