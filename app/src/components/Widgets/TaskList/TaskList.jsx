@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { addTask, updateTask, removeTask } from '../../../state/actions/taskListActions';
+import { addTask, updateTask, removeTask, toggleShowCompleted } from '../../../state/actions/taskListActions';
 
 import { Task } from './Task';
 
 const TaskList = props => {
-  const { taskList, updateTask, removeTask, addTask } = props;
+  const {
+    taskList,
+    updateTask,
+    removeTask,
+    addTask,
+    showCompleted,
+    toggleShowCompleted
+  } = props;
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChanges = e => {
@@ -18,6 +25,10 @@ const TaskList = props => {
     e.preventDefault();
     addTask(inputValue);
     setInputValue('');
+  };
+
+  const handleShowCompleted = () => {
+    toggleShowCompleted();
   };
 
   return (
@@ -38,6 +49,13 @@ const TaskList = props => {
         />
         <button>Add</button>
       </form>
+      <input
+        id='show-completed'
+        type='checkbox'
+        checked={showCompleted}
+        onChange={handleShowCompleted}
+      />
+      <label htmlFor='show-completed'>Show Completed Tasks</label>
       {taskList && (
         <>
           <div className="open-tasks">
@@ -52,7 +70,7 @@ const TaskList = props => {
                 />))}
           </div>
           <div className="closed-tasks">
-            {taskList
+            {showCompleted && taskList
               .filter(task => task.complete)
               .map(task => (
                 <Task
@@ -70,10 +88,11 @@ const TaskList = props => {
 
 const mapStateToProps = state => {
   return {
-    taskList: state.taskListReducer.taskList
+    taskList: state.taskListReducer.taskList,
+    showCompleted: state.taskListReducer.showCompleted
   };
 };
 
-const connectedTaskList = connect(mapStateToProps, { addTask, updateTask, removeTask })(TaskList);
+const connectedTaskList = connect(mapStateToProps, { addTask, updateTask, removeTask, toggleShowCompleted })(TaskList);
 
 export { connectedTaskList as TaskList };
