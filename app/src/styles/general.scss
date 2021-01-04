@@ -1,4 +1,4 @@
-h1, h2, h3, a, li, button, p {
+h1, h2, h3, a, li, button, p, label {
   font-family: $font-main;
 }
 
@@ -13,13 +13,18 @@ h2 {
   font-weight: 600;
 }
 
-p {
+p, label {
   font-size: 2rem;
   font-weight: 400;
 }
 
 button {
   cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .empty-button-space {
