@@ -50,12 +50,12 @@ const TaskList = props => {
         <button>Add</button>
       </form>
       <input
-        id='show-completed'
+        id='input-show-completed'
         type='checkbox'
         checked={showCompleted}
         onChange={handleShowCompleted}
       />
-      <label htmlFor='show-completed'>Show Completed Tasks</label>
+      <label htmlFor='input-show-completed'>Show Completed Tasks</label>
       {taskList && (
         <>
           <div className="open-tasks">
