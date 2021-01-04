@@ -42,3 +42,25 @@ input[type="checkbox"] {
 	position: absolute;
 	white-space: nowrap;
 }
+
+.form-single-input {
+  @include flex(row, space-between, center);
+  flex-wrap: nowrap;
+  border: 1px solid $color-widget-font;
+  border-radius: $border-radius;
+  height: 4rem;
+
+  input {
+    width: 90%;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  button {
+    height: 3.8rem;
+    width: 4rem;
+    border: none;
+    outline: 1px solid black;
+  }
+}
