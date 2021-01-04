@@ -94,7 +94,7 @@ header {
 
 .Task {
   display: grid;
-  grid-template-columns: 4rem auto 4rem;
+  grid-template-columns: 4rem auto 3rem;
   align-items: center;
   padding: 1rem;
   background: lightblue;
@@ -108,5 +108,13 @@ header {
 
   &.Task--completed {
     background: darkgray;
+  }
+
+  .btn-delete-task {
+    background: none;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    justify-self: end;
   }
 }
