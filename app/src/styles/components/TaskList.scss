@@ -1,0 +1,32 @@
+.TaskList {
+  #input-show-completed {
+    margin-right: 1rem;
+  }
+}
+
+.Task {
+  display: grid;
+  grid-template-columns: 4rem auto 3rem;
+  align-items: center;
+  padding: 1rem;
+  background: lightblue;
+  margin: 1rem 0;
+  border-radius: $border-radius;
+
+  input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &.Task--completed {
+    background: darkgray;
+  }
+
+  .btn-delete-task {
+    background: none;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    justify-self: end;
+  }
+}

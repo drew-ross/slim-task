@@ -1,0 +1,21 @@
+.MenuButton {
+  position: relative;
+  width: 4.6rem;
+  height: 4.6rem;
+  margin: 4rem 1.7rem 0;
+  z-index: 1;
+
+  &.MenuButton--main {
+    position: absolute;
+    top: 0;
+  }
+  button {
+    padding: 0;
+    background: none;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
