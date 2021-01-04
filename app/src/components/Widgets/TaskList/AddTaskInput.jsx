@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 export const AddTaskInput = props => {
   const { addTask } = props;
@@ -12,8 +12,10 @@ export const AddTaskInput = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addTask(inputValue);
-    setInputValue('');
+    if (inputValue !== '') {
+      addTask(inputValue);
+      setInputValue('');
+    }
     setShowForm(false);
   };
 
@@ -24,31 +26,53 @@ export const AddTaskInput = props => {
   return (
     <div className='AddTaskInput'>
       { showForm ?
-        (<form
-          className='form-single-input'
-          onSubmit={handleSubmit}>
-          <label
-            htmlFor='input-new-task'
-            className='label--hidden'
+        (
+          <form
+            className='form-single-input'
+            onSubmit={handleSubmit}
           >
-            New Task
-        </label>
-          <input
-            id='input-new-task'
-            placeholder='New Task'
-            value={inputValue}
-            onChange={handleInputChanges}
-          ></input>
-          <button>Add</button>
-        </form>)
-        :
-        (<button
-          className='btn-show-form'
-          onClick={handleShowForm}
-        >
-          +
-        </button>)}
-
+            <label
+              htmlFor='input-new-task'
+              className='label--hidden'
+            >
+              New Task
+          </label>
+            <Input
+              id='input-new-task'
+              placeholder='New Task'
+              value={inputValue}
+              onChange={handleInputChanges}
+            />
+            <button>Add</button>
+          </form>
+        ) : (
+          <button
+            className='btn-show-form'
+            onClick={handleShowForm}
+          >
+            +
+          </button>
+        )
+      }
     </div>
+  );
+};
+
+const Input = props => {
+  const { value, onChange, id, placeholder } = props;
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  return (
+    <input
+      id={id}
+      ref={inputRef}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+    ></input>
   );
 };
