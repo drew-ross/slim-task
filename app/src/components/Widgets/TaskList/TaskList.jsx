@@ -24,7 +24,6 @@ const TaskList = props => {
   return (
     <section className='Widget TaskList'>
       <h2>Tasks</h2>
-      <AddTaskInput addTask={addTask} />
       <input
         id='input-show-completed'
         type='checkbox'
@@ -32,6 +31,7 @@ const TaskList = props => {
         onChange={handleShowCompleted}
       />
       <label htmlFor='input-show-completed'>Show Completed Tasks</label>
+      <AddTaskInput addTask={addTask} />
       {taskList && (
         <>
           <div className="open-tasks">
