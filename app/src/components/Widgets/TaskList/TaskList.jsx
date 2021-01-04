@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { addTask, updateTask, removeTask, toggleShowCompleted } from '../../../state/actions/taskListActions';
 
 import { Task } from './Task';
+import { AddTaskInput } from './AddTaskInput';
 
 const TaskList = props => {
   const {
@@ -14,18 +15,7 @@ const TaskList = props => {
     showCompleted,
     toggleShowCompleted
   } = props;
-  const [inputValue, setInputValue] = useState('');
 
-  const handleInputChanges = e => {
-    const { value } = e.target;
-    setInputValue(value);
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    addTask(inputValue);
-    setInputValue('');
-  };
 
   const handleShowCompleted = () => {
     toggleShowCompleted();
@@ -34,28 +24,14 @@ const TaskList = props => {
   return (
     <section className='Widget TaskList'>
       <h2>Tasks</h2>
-      <form onSubmit={handleSubmit}>
-        <label
-          htmlFor='input-new-task'
-          className='label--hidden'
-        >
-          New Task
-        </label>
-        <input
-          id='input-new-task'
-          placeholder='New Task'
-          value={inputValue}
-          onChange={handleInputChanges}
-        />
-        <button>Add</button>
-      </form>
       <input
-        id='show-completed'
+        id='input-show-completed'
         type='checkbox'
         checked={showCompleted}
         onChange={handleShowCompleted}
       />
-      <label htmlFor='show-completed'>Show Completed Tasks</label>
+      <label htmlFor='input-show-completed'>Show Completed Tasks</label>
+      <AddTaskInput addTask={addTask} />
       {taskList && (
         <>
           <div className="open-tasks">

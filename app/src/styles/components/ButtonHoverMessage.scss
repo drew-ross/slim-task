@@ -1,0 +1,17 @@
+.ButtonHoverMessage {
+  max-width: none;
+  max-height: none;
+  position: absolute;
+  top: 0.5rem;
+  left: 8rem;
+  z-index: 2;
+  width: 20rem;
+  height: 4rem;
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  p {
+    padding: 0.75rem 0.5rem;
+  }
+}

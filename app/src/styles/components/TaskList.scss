@@ -1,0 +1,45 @@
+.TaskList {
+  #input-show-completed {
+    margin-right: 1rem;
+  }
+}
+
+.Task {
+  height: 4rem;
+  padding: 0.5rem 1rem;
+  display: grid;
+  grid-template-columns: 4rem auto 3rem;
+  align-items: center;
+  background: lightblue;
+  margin: 1rem 0;
+  border-radius: $border-radius;
+
+  input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &.Task--completed {
+    background: darkgray;
+  }
+
+  .btn-delete-task {
+    background: none;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    justify-self: end;
+  }
+}
+
+.AddTaskInput {
+  input {
+    font-size: 3rem;
+  }
+
+  .btn-show-form {
+    width: 100%;
+    height: 4rem;
+    font-size: 3rem;
+  }
+}

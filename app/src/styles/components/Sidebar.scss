@@ -1,0 +1,14 @@
+.Sidebar {
+  width: $sidebar-width;
+  height: 100vh;
+  background: $color-main-1;
+  position: absolute;
+  top: 0;
+
+  &.Sidebar--isVisible {
+    left: 0;
+  }
+  &.Sidebar--isHidden {
+    left: -$sidebar-width;
+  }
+}

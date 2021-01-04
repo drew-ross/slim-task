@@ -3,3 +3,10 @@
 @import './mixins.scss';
 @import './general.scss';
 @import './main.scss';
+
+//Components
+@import './components/MenuButton.scss';
+@import './components/ButtonHoverMessage.scss';
+@import './components/Sidebar.scss';
+@import './components/TaskList.scss';
+@import './components/WidgetContainer.scss';

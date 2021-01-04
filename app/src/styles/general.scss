@@ -1,4 +1,4 @@
-h1, h2, h3, a, li, button, p {
+h1, h2, h3, a, li, button, p, label {
   font-family: $font-main;
 }
 
@@ -13,9 +13,18 @@ h2 {
   font-weight: 600;
 }
 
-p {
+p, label {
   font-size: 2rem;
   font-weight: 400;
+}
+
+button {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .empty-button-space {
@@ -32,4 +41,26 @@ p {
 	padding: 0;
 	position: absolute;
 	white-space: nowrap;
+}
+
+.form-single-input {
+  @include flex(row, space-between, center);
+  flex-wrap: nowrap;
+  border: 1px solid $color-widget-font;
+  border-radius: $border-radius;
+  height: 4rem;
+
+  input {
+    width: 90%;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  button {
+    height: 3.8rem;
+    width: 4rem;
+    border: none;
+    outline: 1px solid black;
+  }
 }

@@ -1,9 +1,10 @@
 import React from 'react';
+import close from '../../../svg/closeDark.svg';
 
 export const Task = ({ task, updateTask, removeTask }) => {
 
   const { complete, taskName, uuid } = task;
-  const className = `Task${complete ? ' Task--completed' : ''}`
+  const className = `Task${complete ? ' Task--completed' : ''}`;
   const handleCheck = () => {
     updateTask({
       ...task,
@@ -26,7 +27,9 @@ export const Task = ({ task, updateTask, removeTask }) => {
         onChange={handleCheck}
       />
       <p>{taskName}</p>
-      <button onClick={handleDelete}>Delete</button>
+      <button className='btn-delete-task' onClick={handleDelete}>
+        <img src={close} alt='delete icon' aria-label='delete task' />
+      </button>
     </div>
   );
 };

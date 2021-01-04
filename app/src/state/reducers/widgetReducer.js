@@ -1,4 +1,4 @@
-import { TOGGLE_WIDGET } from '../actions/widgetActions';
+import { TOGGLE_WIDGET, SET_WIDGET_STATE } from '../actions/widgetActions';
 
 const initialState = {
 	isOn: {
@@ -10,6 +10,9 @@ const initialState = {
 
 export const widgetReducer = (state = initialState, action) => {
 	switch (action.type) {
+		case SET_WIDGET_STATE:
+			return action.payload;
+			
 		case TOGGLE_WIDGET:
 			const { widgetName } = action.payload;
 			return {
@@ -19,7 +22,7 @@ export const widgetReducer = (state = initialState, action) => {
 					[widgetName]: !state.isOn[widgetName]
 				}
 			};
-			
+
 		default:
 			return state;
 	};
