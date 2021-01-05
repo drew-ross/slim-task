@@ -17,7 +17,7 @@ export const AddTaskInput = props => {
   const handleSubmit = e => {
     e.preventDefault();
     if (inputValue !== '') {
-      addTask(inputValue);
+      addTask(inputValue.trim());
       setInputValue('');
     }
     setShowForm(false);
