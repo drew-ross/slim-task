@@ -1,5 +1,6 @@
 .Task {
-  height: 4rem;
+  min-height: 4rem;
+  width: 100%;
   padding: 0.5rem 1rem;
   display: grid;
   grid-template-columns: 4rem auto 3rem;
@@ -7,6 +8,13 @@
   background: lightblue;
   margin: 1rem 0;
   border-radius: $border-radius;
+  min-width: 5rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  
+  p {
+    min-width: 0;
+  }
 
   input[type="checkbox"] {
     width: 2rem;
