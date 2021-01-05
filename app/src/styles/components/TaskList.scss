@@ -15,16 +15,13 @@
   p {
     min-width: 0;
   }
-
   input[type="checkbox"] {
     width: 2rem;
     height: 2rem;
   }
-
   &.Task--completed {
     background: darkgray;
   }
-
   .btn-delete-task {
     background: none;
     border: none;
@@ -38,7 +35,11 @@
   input {
     font-size: 3rem;
   }
-
+  .character-limit {
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+    align-self: flex-end;
+  }
   .btn-show-form {
     width: 100%;
     height: 4rem;
