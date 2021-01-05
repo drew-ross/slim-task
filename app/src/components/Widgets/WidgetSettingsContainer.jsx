@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 
 export const WidgetSettingsContainer = ({ children }) => {
   const [showOptions, setShowOptions] = useState(false);
-
+  const className = `WidgetSettingsContainer${showOptions ? ' open' : ''}`
+  
   const handleClick = () => {
     setShowOptions(!showOptions);
   };
 
   return (
-    <div className="WidgetSettingsContainer">
-      <div className="WidgetSettingsContainer--settings">
+    <div className={className}>
+      <div className='WidgetSettingsContainer--settings'>
         {showOptions && children}
       </div>
-      <button onClick={handleClick}>Options</button>
+      <div className='WidgetSettingsContainer--btn-container'>
+        <button onClick={handleClick}>Options</button>
+      </div>
     </div>
   );
 };
