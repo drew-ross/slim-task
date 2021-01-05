@@ -5,6 +5,7 @@ import { addTask, updateTask, removeTask, toggleShowCompleted } from '../../../s
 
 import { Task } from './Task';
 import { AddTaskInput } from './AddTaskInput';
+import { WidgetSettingsContainer } from '../WidgetSettingsContainer';
 
 const TaskList = props => {
   const {
@@ -16,7 +17,6 @@ const TaskList = props => {
     toggleShowCompleted
   } = props;
 
-
   const handleShowCompleted = () => {
     toggleShowCompleted();
   };
@@ -24,13 +24,15 @@ const TaskList = props => {
   return (
     <section className='Widget TaskList'>
       <h2>Tasks</h2>
-      <input
-        id='input-show-completed'
-        type='checkbox'
-        checked={showCompleted}
-        onChange={handleShowCompleted}
-      />
-      <label htmlFor='input-show-completed'>Show Completed Tasks</label>
+      <WidgetSettingsContainer>
+        <input
+          id='input-show-completed'
+          type='checkbox'
+          checked={showCompleted}
+          onChange={handleShowCompleted}
+        />
+        <label htmlFor='input-show-completed'>Show Completed Tasks</label>
+      </WidgetSettingsContainer>
       <AddTaskInput addTask={addTask} />
       {taskList && (
         <>
