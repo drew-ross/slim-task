@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+const characterLimit = 75;
+
 export const AddTaskInput = props => {
   const { addTask } = props;
   const [showForm, setShowForm] = useState(false);
@@ -7,13 +9,15 @@ export const AddTaskInput = props => {
 
   const handleInputChanges = e => {
     const { value } = e.target;
-    setInputValue(value);
+    if (value.length <= characterLimit) {
+      setInputValue(value);
+    }
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     if (inputValue !== '') {
-      addTask(inputValue);
+      addTask(inputValue.trim());
       setInputValue('');
     }
     setShowForm(false);
@@ -43,6 +47,7 @@ export const AddTaskInput = props => {
               value={inputValue}
               onChange={handleInputChanges}
             />
+            <p className='character-limit'>{`${inputValue.length}/${characterLimit}`}</p>
             <button>Add</button>
           </form>
         ) : (
@@ -73,6 +78,6 @@ const Input = props => {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-    ></input>
+    />
   );
-};
+};;

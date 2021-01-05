@@ -1,0 +1,36 @@
+.WidgetContainer {
+  max-width: 80rem;
+  min-height: 10rem;
+  margin: 4rem 0;
+  background: $color-widget-background;
+  color: $color-widget-font;
+  border-radius: $border-radius;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.WidgetSettingsContainer {
+  position: relative;
+
+  &.open {
+    margin-bottom: 2rem;
+  }
+  input[type="checkbox"] {
+    margin-right: 1rem;
+  }
+  .WidgetSettingsContainer--settings {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .WidgetSettingsContainer--btn-container {
+    position: absolute;
+    right: 0;
+    top: -4rem;
+  }
+}
+
+.Widget {
+  padding: 2rem;
+}
