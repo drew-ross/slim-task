@@ -1,14 +1,77 @@
 .Sidebar {
-  width: $sidebar-width;
-  height: 100vh;
+  min-width: 8rem;
+  height: 100%;
   background: $color-main-1;
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+
+  @include for-mobile-down {
+    width: 100vw;
+    min-height: 8rem;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 8rem 8rem 8rem 8rem;
+    justify-items: left;
+    align-items: center;
+  }
 
   &.Sidebar--isVisible {
-    left: 0;
+    animation-name: slide-in-left;
+
+    @include for-mobile-down {
+      animation-name: slide-in-top;
+    }
   }
   &.Sidebar--isHidden {
-    left: -$sidebar-width;
+    animation-name: slide-out-left;
+
+    @include for-mobile-down {
+      animation-name: slide-out-top;
+    }
+  }
+  .empty-button-space {
+    height: 8rem;
+
+    @include for-mobile-down {
+      height: 0;
+    }
+  }
+}
+
+// Animations
+@keyframes slide-out-left {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -8rem;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    left: -8rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes slide-out-top {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -100vh;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    top: -100vh;
+  }
+  100% {
+    top: 0;
   }
 }

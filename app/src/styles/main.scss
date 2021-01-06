@@ -5,14 +5,26 @@ html {
 header {
   color: $color-main-1;
   margin-left: 6rem;
+
+  @include for-mobile-down {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .main {
   margin: 4rem;
 
+  @include for-mobile-down {
+    margin: 2.2rem 2rem;
+  }
   &.menu-on {
     margin-left: 12rem;
-
+    
+    @include for-mobile-down {
+      margin: 2.2rem 2rem;
+    }
     header {
       margin-left: 0;
     }

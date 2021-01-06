@@ -2,12 +2,19 @@
   position: relative;
   width: 4.6rem;
   height: 4.6rem;
-  margin: 4rem 1.7rem 0;
   z-index: 1;
+  margin: 4rem 1.7rem 0;
 
+  @include for-mobile-down {
+    margin: 0 1.7rem 0;
+  }
   &.MenuButton--main {
-    position: absolute;
+    position: fixed;
     top: 0;
+
+    @include for-mobile-down {
+      top: 1.7rem;
+    }
   }
   button {
     padding: 0;
