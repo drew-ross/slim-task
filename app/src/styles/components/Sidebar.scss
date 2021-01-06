@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   display: grid;
-  grid-template-rows: 12rem auto 12rem;
+  grid-template-rows: 10rem auto 10rem;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   animation-duration: 0.5s;
@@ -46,13 +46,6 @@
       grid-template-rows: 8rem 8rem 8rem 8rem;
       justify-items: left;
       align-items: center;
-    }
-  }
-  .empty-button-space {
-    height: 8rem;
-
-    @include for-mobile-down {
-      height: 0;
     }
   }
 }
