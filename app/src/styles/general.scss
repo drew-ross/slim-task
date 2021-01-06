@@ -54,7 +54,7 @@ input[type="checkbox"] {
 .form-single-input {
   @include flex(row, space-between, center);
   flex-wrap: nowrap;
-  border: 1px solid $color-widget-font;
+  border: 1px solid $color-font-dark;
   border-radius: $border-radius;
   height: 4rem;
 
