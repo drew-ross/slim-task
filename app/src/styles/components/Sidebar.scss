@@ -1,10 +1,13 @@
 .Sidebar {
   min-width: 8rem;
-  height: 100%;
+  height: 100vh;
   background: $color-main-1;
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
+  display: grid;
+  grid-template-rows: 12rem auto 12rem;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   animation-duration: 0.5s;
@@ -12,11 +15,7 @@
   @include for-mobile-down {
     width: 100vw;
     min-height: 8rem;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 8rem 8rem 8rem 8rem;
-    justify-items: left;
-    align-items: center;
+    display: block;
   }
 
   &.Sidebar--isVisible {
@@ -31,6 +30,22 @@
 
     @include for-mobile-down {
       animation-name: slide-out-top;
+    }
+  }
+  .menu-button-container {
+    height: 100%;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 1px;
+    }
+    @include for-mobile-down {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-rows: 8rem 8rem 8rem 8rem;
+      justify-items: left;
+      align-items: center;
     }
   }
   .empty-button-space {
