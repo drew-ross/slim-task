@@ -22,12 +22,6 @@ export const Sidebar = ({ widgetsAreOn }) => {
           <div className='empty-button-space-mobile' />
           <MenuButton menuButton={menuButtonData.taskList} isOn={widgetsAreOn.taskList} widgetName='taskList' />
           <MenuButton menuButton={menuButtonData.timer} isOn={widgetsAreOn.timer} widgetName='timer' />
-          <MenuButton menuButton={menuButtonData.timer} isOn={widgetsAreOn.timer} widgetName='timer' />
-          <MenuButton menuButton={menuButtonData.timer} isOn={widgetsAreOn.timer} widgetName='timer' />
-          <MenuButton menuButton={menuButtonData.timer} isOn={widgetsAreOn.timer} widgetName='timer' />
-          <MenuButton menuButton={menuButtonData.timer} isOn={widgetsAreOn.timer} widgetName='timer' />
-          <MenuButton menuButton={menuButtonData.timer} isOn={widgetsAreOn.timer} widgetName='timer' />
-          <MenuButton menuButton={menuButtonData.timer} isOn={widgetsAreOn.timer} widgetName='timer' />
         </div>
         <div className='empty-button-space' />
       </div>
