@@ -5,3 +5,8 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+// Media Queries
+@mixin for-mobile-down {
+  @media (max-width: 600px) { @content; }
+}
