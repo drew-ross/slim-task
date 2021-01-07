@@ -3,8 +3,8 @@ const colorFontLight = '#f0f0f0';
 
 const themeDefinition = (fontColor, backgroundColor) => {
   return {
-    font: fontColor,
-    background: backgroundColor
+    fontColor,
+    backgroundColor
   };
 };
 
