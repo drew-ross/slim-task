@@ -2,6 +2,7 @@ import { ADD_TASK, UPDATE_TASK, REMOVE_TASK, SET_TASKLIST_STATE, TOGGLE_SHOW_COM
 import { v4 as uuid } from 'uuid';
 
 const initialState = {
+  theme: 'light',
   showCompleted: false,
   taskList: []
 };
