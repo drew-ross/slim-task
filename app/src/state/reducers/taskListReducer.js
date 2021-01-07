@@ -1,5 +1,12 @@
-import { ADD_TASK, UPDATE_TASK, REMOVE_TASK, SET_TASKLIST_STATE, TOGGLE_SHOW_COMPLETED } from '../actions/taskListActions';
 import { v4 as uuid } from 'uuid';
+import {
+  ADD_TASK,
+  UPDATE_TASK,
+  REMOVE_TASK,
+  SET_TASKLIST_STATE,
+  TOGGLE_SHOW_COMPLETED,
+  SET_TASKLIST_THEME
+} from '../actions/taskListActions';
 
 const initialState = {
   theme: 'light',
@@ -55,6 +62,13 @@ export const taskListReducer = (state = initialState, action) => {
         ...state,
         showCompleted: !state.showCompleted
       };
+
+    case SET_TASKLIST_THEME: {
+      return {
+        ...state,
+        theme: action.payload
+      };
+    }
 
     default:
       return state;
