@@ -7,6 +7,10 @@ export const getThemeStyle = (theme, selector) => {
 
 export const getThemeList = () => {
   return Object.entries(themes).map(theme => (
-    [theme[0], theme[1].backgroundColor]
+    {
+      name: theme[0],
+      backgroundColor: theme[1].backgroundColor,
+      color: theme[1].color
+    }
   ));
 };
