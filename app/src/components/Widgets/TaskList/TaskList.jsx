@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { addTask, updateTask, removeTask, toggleShowCompleted } from '../../../state/actions/taskListActions';
+import { getThemeStyle } from '../../../themes/themeFunctions';
 
 import { Task } from './Task';
 import { AddTaskInput } from './AddTaskInput';
@@ -14,7 +15,8 @@ const TaskList = props => {
     removeTask,
     addTask,
     showCompleted,
-    toggleShowCompleted
+    toggleShowCompleted,
+    theme
   } = props;
 
   const handleShowCompleted = () => {
@@ -22,8 +24,11 @@ const TaskList = props => {
   };
 
   return (
-    <section className='Widget TaskList'>
-      <h2>Tasks</h2>
+    <section
+      className='Widget TaskList'
+      style={getThemeStyle(theme, 'backgroundColor')}
+    >
+      <h2 style={getThemeStyle(theme, 'color')}>Tasks</h2>
       <WidgetSettingsContainer>
         <div>
           <input
@@ -69,7 +74,8 @@ const TaskList = props => {
 const mapStateToProps = state => {
   return {
     taskList: state.taskListReducer.taskList,
-    showCompleted: state.taskListReducer.showCompleted
+    showCompleted: state.taskListReducer.showCompleted,
+    theme: state.taskListReducer.theme
   };
 };
 
