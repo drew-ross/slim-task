@@ -2,9 +2,6 @@
   max-width: 80rem;
   min-height: 10rem;
   margin: 4rem 0;
-  background: $color-widget-background;
-  color: $color-font-dark;
-  border-radius: $border-radius;
 
   h2 {
     margin-bottom: 2rem;
@@ -32,5 +29,7 @@
 }
 
 .Widget {
+  background-color: white;
+  border-radius: $border-radius;
   padding: 2rem;
 }
