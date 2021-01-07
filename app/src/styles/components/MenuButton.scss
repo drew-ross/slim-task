@@ -10,7 +10,7 @@
   }
   &.MenuButton--main {
     position: fixed;
-    top: 4rem;
+    top: 2rem;
 
     @include for-mobile-down {
       top: 1.7rem;

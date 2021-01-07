@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
-import { addTask, updateTask, removeTask, toggleShowCompleted } from '../../../state/actions/taskListActions';
+import { addTask, updateTask, removeTask, toggleShowCompleted, setTaskListTheme } from '../../../state/actions/taskListActions';
+import { getThemeStyle } from '../../../themes/themeFunctions';
 
 import { Task } from './Task';
 import { AddTaskInput } from './AddTaskInput';
 import { WidgetSettingsContainer } from '../WidgetSettingsContainer';
+import ThemeSelector from '../../ThemeSelector';
 
 const TaskList = props => {
   const {
@@ -14,7 +16,9 @@ const TaskList = props => {
     removeTask,
     addTask,
     showCompleted,
-    toggleShowCompleted
+    toggleShowCompleted,
+    theme,
+    setTaskListTheme
   } = props;
 
   const handleShowCompleted = () => {
@@ -22,10 +26,14 @@ const TaskList = props => {
   };
 
   return (
-    <section className='Widget TaskList'>
-      <h2>Tasks</h2>
+    <section
+      className='Widget TaskList'
+      style={getThemeStyle(theme, 'backgroundColor')}
+    >
+      <h2 style={getThemeStyle(theme, 'color')}>Tasks</h2>
       <WidgetSettingsContainer>
         <div>
+          <ThemeSelector setTheme={setTaskListTheme} currentTheme={theme} />
           <input
             id='input-show-completed'
             type='checkbox'
@@ -69,10 +77,18 @@ const TaskList = props => {
 const mapStateToProps = state => {
   return {
     taskList: state.taskListReducer.taskList,
-    showCompleted: state.taskListReducer.showCompleted
+    showCompleted: state.taskListReducer.showCompleted,
+    theme: state.taskListReducer.theme
   };
 };
 
-const connectedTaskList = connect(mapStateToProps, { addTask, updateTask, removeTask, toggleShowCompleted })(TaskList);
+const connectedTaskList = connect(mapStateToProps,
+  {
+    addTask,
+    updateTask,
+    removeTask,
+    toggleShowCompleted,
+    setTaskListTheme
+  })(TaskList);
 
 export { connectedTaskList as TaskList };
