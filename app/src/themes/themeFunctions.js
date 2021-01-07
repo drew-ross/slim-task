@@ -4,3 +4,9 @@ import { themes } from './themeDefinitions';
 export const getThemeStyle = (theme, selector) => {
   return { [selector]: themes[theme][selector] };
 };
+
+export const getThemeList = () => {
+  return Object.entries(themes).map(theme => (
+    [theme[0], theme[1].backgroundColor]
+  ));
+};
