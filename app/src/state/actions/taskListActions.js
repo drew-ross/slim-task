@@ -26,6 +26,5 @@ export const toggleShowCompleted = () => {
 };
 
 export const setTaskListTheme = (theme) => {
-  console.log(theme);
   return { type: SET_TASKLIST_THEME, payload: theme };
 };

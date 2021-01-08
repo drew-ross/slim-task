@@ -16,8 +16,8 @@ export const ThemeSelector = props => {
         id='select-theme'
         onChange={handleOnChange}
       >
-        {getThemeList().map(theme =>
-          <ThemeOption theme={theme} currentTheme={currentTheme} />
+        {getThemeList().map((theme, key) =>
+          <ThemeOption key={key} theme={theme} currentTheme={currentTheme} />
         )}
       </select>
     </form>

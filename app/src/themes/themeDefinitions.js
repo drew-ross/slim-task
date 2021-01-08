@@ -1,15 +1,25 @@
-const colorFontDark = '#1f1f1f';
-const colorFontLight = '#f0f0f0';
+const generalStyles = {
+  light: {
+    font: '#f0f0f0',
+    border: '#f0f0f0'
+  },
+  dark: {
+    font: '#1f1f1f',
+    border: '#808080'
+  }
+}
 
-const themeDefinition = (fontColor, backgroundColor) => {
+const themeDefinition = (backgroundColor, generalStyle) => {
   return {
-    color: fontColor,
-    backgroundColor
+    generalStyle,
+    backgroundColor,
+    color: generalStyles[generalStyle].font,
+    borderColor: generalStyles[generalStyle].border
   };
 };
 
 export const themes = {
-  light: themeDefinition(colorFontDark, colorFontLight),
-  dark: themeDefinition(colorFontLight, colorFontDark),
-  orange: themeDefinition(colorFontLight, '#d6754b')
+  light: themeDefinition('#f0f0f0', 'dark'),
+  dark: themeDefinition('#404040', 'light'),
+  orange: themeDefinition('#d6754b', 'light')
 };
