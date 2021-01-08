@@ -10,6 +10,6 @@ const themeDefinition = (fontColor, backgroundColor) => {
 
 export const themes = {
   light: themeDefinition(colorFontDark, colorFontLight),
-  dark: themeDefinition(colorFontLight, colorFontDark),
+  dark: themeDefinition(colorFontLight, '#404040'),
   orange: themeDefinition(colorFontLight, '#d6754b')
 };
