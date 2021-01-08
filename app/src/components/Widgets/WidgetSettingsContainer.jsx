@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import { gear, gearSolid, gearDark, gearSolidDark } from './../../svg';
 
@@ -8,9 +8,11 @@ import { ThemedIcon } from '../Icon';
 export const WidgetSettingsContainer = ({ theme, children }) => {
   const [showOptions, setShowOptions] = useState(false);
   const className = `WidgetSettingsContainer${showOptions ? ' open' : ''}`;
+  const buttonRef = useRef();
 
   const handleClick = () => {
     setShowOptions(!showOptions);
+    buttonRef.current.blur();
   };
 
   return (
@@ -26,6 +28,7 @@ export const WidgetSettingsContainer = ({ theme, children }) => {
           className={`btn-${showOptions ? 'on' : 'off'}`}
           onClick={handleClick}
           aria-label={`${showOptions ? 'close' : 'open'} settings`}
+          ref={buttonRef}
         >
           <ThemedIcon
             theme={theme}
