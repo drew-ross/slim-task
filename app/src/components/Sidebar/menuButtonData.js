@@ -1,10 +1,10 @@
-import icons from './../../svg';
+import { close, hamburger, check, checkSolid, timer, timerSolid } from './../../svg';
 
 const menuButtonData = {
   hamburger: {
     icon: {
-      on: icons.close,
-      off: icons.hamburger
+      on: close,
+      off: hamburger
     },
     ariaLabel: {
       on: 'Close Menu',
@@ -13,8 +13,8 @@ const menuButtonData = {
   },
   taskList: {
     icon: {
-      on: icons.checkSolid,
-      off: icons.check
+      on: checkSolid,
+      off: check
     },
     ariaLabel: {
       on: 'Close Tasks',
@@ -23,8 +23,8 @@ const menuButtonData = {
   },
   timer: {
     icon: {
-      on: icons.timerSolid,
-      off: icons.timer
+      on: timerSolid,
+      off: timer
     },
     ariaLabel: {
       on: 'Close Timer',
