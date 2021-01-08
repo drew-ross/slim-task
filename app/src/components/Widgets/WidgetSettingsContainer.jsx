@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
+import { gear, gearSolid, gearDark, gearSolidDark } from './../../svg';
+
 import { getThemeStyle } from '../../themes/themeFunctions';
+import { ThemedIcon } from '../Icon';
 
 export const WidgetSettingsContainer = ({ theme, children }) => {
   const [showOptions, setShowOptions] = useState(false);
@@ -19,7 +22,19 @@ export const WidgetSettingsContainer = ({ theme, children }) => {
         {showOptions && children}
       </div>
       <div className='WidgetSettingsContainer--btn-container'>
-        <button onClick={handleClick}>Options</button>
+        <button
+          onClick={handleClick}
+          aria-label={`${showOptions ? 'close' : 'open'} settings`}
+        >
+          <ThemedIcon
+            theme={theme}
+            toggled={showOptions}
+            darkIcon={gearDark}
+            darkOnIcon={gearSolidDark}
+            lightIcon={gear}
+            lightOnIcon={gearSolid}
+          />
+        </button>
       </div>
     </section>
   );
