@@ -11,6 +11,7 @@ const generalStyles = {
 
 const themeDefinition = (backgroundColor, generalStyle) => {
   return {
+    generalStyle,
     backgroundColor,
     color: generalStyles[generalStyle].font,
     borderColor: generalStyles[generalStyle].border
