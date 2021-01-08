@@ -19,3 +19,7 @@ export const getThemeList = () => {
     }
   ));
 };
+
+export const getGeneralStyle = theme => {
+  return themes[theme].generalStyle;
+};
