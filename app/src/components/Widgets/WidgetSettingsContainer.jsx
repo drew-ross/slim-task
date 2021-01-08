@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 
-export const WidgetSettingsContainer = ({ children }) => {
+import { getThemeStyle } from '../../themes/themeFunctions';
+
+export const WidgetSettingsContainer = ({ theme, children }) => {
   const [showOptions, setShowOptions] = useState(false);
-  const className = `WidgetSettingsContainer${showOptions ? ' open' : ''}`
+  const className = `WidgetSettingsContainer${showOptions ? ' open' : ''}`;
 
   const handleClick = () => {
     setShowOptions(!showOptions);
   };
 
   return (
-    <section className={className}>
+    <section
+      className={className}
+      style={getThemeStyle(theme, 'color')}
+    >
       <div className='WidgetSettingsContainer--settings'>
         {showOptions && children}
       </div>
