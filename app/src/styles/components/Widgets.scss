@@ -27,10 +27,24 @@
     top: -5rem;
 
     button {
+      position: relative;
       background: none;
       width: 4rem;
       height: 4rem;
       border: none;
+
+      & img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        animation-duration: 0.5s;
+      }
+      &.btn-on img {
+        animation-name: rotate-60-cw;
+      }
+      &.btn-off img {
+        animation-name: rotate-60-cw-return;
+      }
     }
   }
 }
@@ -40,4 +54,22 @@
   border-radius: $border-radius;
   border: 1px solid gray;
   padding: 2rem;
+}
+
+// Animations
+@keyframes rotate-60-cw {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(60deg);
+  }
+}
+@keyframes rotate-60-cw-return {
+  0% {
+    transform: rotate(60deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
