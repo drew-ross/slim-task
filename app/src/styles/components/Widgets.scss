@@ -24,7 +24,14 @@
   .WidgetSettingsContainer--btn-container {
     position: absolute;
     right: 0;
-    top: -4rem;
+    top: -5rem;
+
+    button {
+      background: none;
+      width: 4rem;
+      height: 4rem;
+      border: none;
+    }
   }
 }
 
