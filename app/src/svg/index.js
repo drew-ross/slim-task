@@ -6,6 +6,8 @@ import timer from './timer.svg';
 import timerSolid from './timerSolid.svg';
 import gear from './gear.svg';
 import gearSolid from './gearSolid.svg';
+import gearDark from './gearDark.svg';
+import gearSolidDark from './gearSolidDark.svg';
 
 export {
   check,
@@ -15,5 +17,7 @@ export {
   timer,
   timerSolid,
   gear,
-  gearSolid
+  gearSolid,
+  gearDark,
+  gearSolidDark
 };
