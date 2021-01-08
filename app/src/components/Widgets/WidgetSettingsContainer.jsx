@@ -23,6 +23,7 @@ export const WidgetSettingsContainer = ({ theme, children }) => {
       </div>
       <div className='WidgetSettingsContainer--btn-container'>
         <button
+          className={`btn-${showOptions ? 'on' : 'off'}`}
           onClick={handleClick}
           aria-label={`${showOptions ? 'close' : 'open'} settings`}
         >
