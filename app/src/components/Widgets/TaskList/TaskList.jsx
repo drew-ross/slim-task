@@ -31,7 +31,7 @@ const TaskList = props => {
       style={getThemeStyle(theme, 'backgroundColor')}
     >
       <h2 style={getThemeStyle(theme, 'color')}>Tasks</h2>
-      <WidgetSettingsContainer>
+      <WidgetSettingsContainer theme={theme}>
         <div>
           <ThemeSelector setTheme={setTaskListTheme} currentTheme={theme} />
           <input
