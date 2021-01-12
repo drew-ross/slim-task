@@ -87,4 +87,4 @@ const Input = props => {
       onChange={onChange}
     />
   );
-};;
+};
