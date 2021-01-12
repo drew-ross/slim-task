@@ -35,6 +35,10 @@ input[type="checkbox"] {
   height: 1.5rem;
 }
 
+::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .label--hidden {
   border: 0;
   clip: rect(0 0 0 0);
