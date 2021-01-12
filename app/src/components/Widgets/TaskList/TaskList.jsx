@@ -43,7 +43,7 @@ const TaskList = props => {
           <label htmlFor='input-show-completed'>Show Completed Tasks</label>
         </div>
       </WidgetSettingsContainer>
-      <AddTaskInput addTask={addTask} />
+      <AddTaskInput addTask={addTask} theme={theme} />
       {taskList && (
         <>
           <div className="open-tasks">

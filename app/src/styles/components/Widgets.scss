@@ -29,8 +29,8 @@
     button {
       position: relative;
       background: none;
-      width: 4rem;
-      height: 4rem;
+      width: 3rem;
+      height: 3rem;
       border: none;
 
       & img {
@@ -43,6 +43,7 @@
         animation-name: rotate-60-cw;
       }
       &.btn-off img {
+        opacity: .6;
         animation-name: rotate-60-cw-return;
       }
     }

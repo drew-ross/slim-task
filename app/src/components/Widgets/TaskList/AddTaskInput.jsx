@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { getThemeStyle } from '../../../themes/themeFunctions';
 
 const characterLimit = 75;
 
 export const AddTaskInput = props => {
-  const { addTask } = props;
+  const { addTask, theme } = props;
   const [showForm, setShowForm] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
@@ -28,43 +29,48 @@ export const AddTaskInput = props => {
   };
 
   return (
-    <div className='AddTaskInput'>
-      { showForm ?
-        (
-          <form
-            className='form-single-input'
-            onSubmit={handleSubmit}
-          >
-            <label
-              htmlFor='input-new-task'
-              className='label--hidden'
+    <div
+      className='AddTaskInput'
+      style={getThemeStyle(theme, 'color')}>
+      {
+        showForm ?
+          (
+            <form
+              style={getThemeStyle(theme, 'borderColor')}
+              className='form-single-input'
+              onSubmit={handleSubmit}
             >
-              New Task
+              <label
+                htmlFor='input-new-task'
+                className='label--hidden'
+              >
+                New Task
           </label>
-            <Input
-              id='input-new-task'
-              placeholder='New Task'
-              value={inputValue}
-              onChange={handleInputChanges}
-            />
-            <p className='character-limit'>{`${inputValue.length}/${characterLimit}`}</p>
-            <button>Add</button>
-          </form>
-        ) : (
-          <button
-            className='btn-show-form'
-            onClick={handleShowForm}
-          >
-            +
-          </button>
-        )
+              <Input
+                id='input-new-task'
+                placeholder='New Task'
+                value={inputValue}
+                onChange={handleInputChanges}
+                style={getThemeStyle(theme, 'color')}
+              />
+              <p className='character-limit'>{`${inputValue.length}/${characterLimit}`}</p>
+              <button>Add</button>
+            </form>
+          ) : (
+            <button
+              className='btn-show-form'
+              onClick={handleShowForm}
+            >
+              +
+            </button>
+          )
       }
-    </div>
+    </div >
   );
 };
 
 const Input = props => {
-  const { value, onChange, id, placeholder } = props;
+  const { value, onChange, id, placeholder, style } = props;
   const inputRef = useRef();
 
   useEffect(() => {
@@ -73,6 +79,7 @@ const Input = props => {
 
   return (
     <input
+      style={style ? style : null}
       id={id}
       ref={inputRef}
       placeholder={placeholder}
